@@ -8,13 +8,38 @@
 TARGET_DISABLE_EPPE := true
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Matrixx
-MATRIXX_BUILD_TYPE := Official
-MATRIXX_MAINTAINER := EinarG.
-MATRIXX_CHIPSET := TensorG1
-MATRIXX_BATTERY := 5000mAh
-MATRIXX_DISPLAY := 1440x3120
-<<<<<<< HEAD
+
+# Device config
+TARGET_HAS_UDFPS := true
+TARGET_ENABLE_BLUR := true
+TARGET_EXCLUDES_AUDIOFX := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+# TARGET_BUILD_PACKAGE options:
+# 1 - vanilla (default)
+# 2 - microg
+# 3 - gapps
+TARGET_BUILD_PACKAGE := 1
+
+# TARGET_LAUNCHER options:
+# 1 - stock (default)
+# 2 - lawnchair
+# 3 - pixel (valid only on gapps builds)
+TARGET_LAUNCHER := 1
+
+# GAPPS (valid only for GAPPS builds)
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_SUPPORTS_CALL_RECORDING := true
+TARGET_INCLUDE_STOCK_ARCORE := false
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+# TARGET_SUPPORTS_GOOGLE_RECORDER := true
+
+# Debugging
+TARGET_INCLUDE_MATLOG := false
+
+# Maintainer
+ALPHA_BUILD_TYPE := Unofficial
+ALPHA_MAINTAINER := IczYn
 
 # Matrixx Flags
 WITH_GMS := true
@@ -28,9 +53,6 @@ TARGET_IS_PIXEL_6 := true
 TARGET_PIXEL_STAND_SUPPORTED := true
 TARGET_EXCLUDES_AUXIO := true
 TARGET_EXCLUDES_VIA := true
-=======
-WITH_GMS := true
->>>>>>> 6994c26 (raviole: add PixelParts)
 BUILD_GOOGLE_CONTACTS := true
 BUILD_GOOGLE_DIALER := true
 BUILD_GOOGLE_MESSAGE := true

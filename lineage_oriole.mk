@@ -9,14 +9,34 @@ TARGET_DISABLE_EPPE := true
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Matrixx
-MATRIXX_BUILD_TYPE := Official
-MATRIXX_MAINTAINER := EinarG.
-MATRIXX_CHIPSET := GS101
-MATRIXX_BATTERY := 4614mAh
-MATRIXX_DISPLAY := 1080x2400
+TARGET_HAS_UDFPS := true
+TARGET_ENABLE_BLUR := true
+TARGET_EXCLUDES_AUDIOFX := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_BUILD_PACKAGE := 1
 
-# Matrixx Flags
-WITH_GMS := true
+
+# TARGET_LAUNCHER options
+ # 1 - stock (default)
+# 2 - lawnchair l
+# 3 - pixel (valid only on gapps builds) 
+
+
+TARGET_LAUNCHER := 1
+# GAPPS (valid only for GAPPS builds)
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_SUPPORTS_CALL_RECORDING := true
+TARGET_INCLUDE_STOCK_ARCORE := false
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+# TARGET_SUPPORTS_GOOGLE_RECORDER := true
+
+# Debugging
+TARGET_INCLUDE_MATLOG := false
+
+# Maintainer
+ALPHA_BUILD_TYPE := Unofficial
+ALPHA_MAINTAINER := IczYn
+
 TARGET_HAS_UDFPS := true
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_INCLUDE_PIXEL_FRAMEWORK := true
